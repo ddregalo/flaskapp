@@ -10,6 +10,11 @@ pytest-flask = "*"
 coverage = "*"
 pytest-cov = "*"
 pytest-splinter = "*"
+pymongo = "*"
+flask-wtf = "*"
+passlib = "*"
+flask-mongoengine = "*"
+flask-login = "*"
 
 [dev-packages]
 
