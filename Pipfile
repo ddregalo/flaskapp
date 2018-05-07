@@ -7,6 +7,8 @@ name = "pypi"
 flask = "*"
 pytest = "*"
 pytest-flask = "*"
+coverage = "*"
+pytest-cov = "*"
 
 [dev-packages]
 
