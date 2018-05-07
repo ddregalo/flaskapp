@@ -3,5 +3,6 @@
   "tests/test_app.py::test_app_index_page_navbar",
   "tests/test_app.py::test_app_index_page_title",
   "tests/test_app.py::test_app_about_page_status",
+  "tests/test_app.py::test_app_articles_page_status",
   "tests/test_app.py::test_app_about_page_content"
 ]
