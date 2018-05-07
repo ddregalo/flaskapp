@@ -4,5 +4,7 @@
   "tests/test_app.py::test_app_index_page_title",
   "tests/test_app.py::test_app_about_page_status",
   "tests/test_app.py::test_app_articles_page_status",
-  "tests/test_app.py::test_app_about_page_content"
+  "tests/test_app.py::test_app_about_page_content",
+  "tests/test_app.py::test_single_article_view_status",
+  "tests/test_data.py::TestData::()::test_data_articles"
 ]

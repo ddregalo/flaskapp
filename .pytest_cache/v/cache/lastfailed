@@ -1,8 +1,1 @@
-{
-  "tests/test_app.py::test_app_about_page_content": true,
-  "tests/test_app.py::test_app_about_page_status": true,
-  "tests/test_app.py::test_app_articles_page_status": true,
-  "tests/test_app.py::test_app_index_page_navbar": true,
-  "tests/test_app.py::test_app_index_page_title": true,
-  "tests/test_app.py::test_app_index_status_ok": true
-}
+{}

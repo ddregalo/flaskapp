@@ -9,6 +9,7 @@ pytest = "*"
 pytest-flask = "*"
 coverage = "*"
 pytest-cov = "*"
+pytest-splinter = "*"
 
 [dev-packages]
 

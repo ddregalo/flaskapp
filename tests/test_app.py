@@ -1,4 +1,5 @@
 import pytest
+from splinter import Browser
 from data import Articles
 from app import create_app
 from flask import(
@@ -7,6 +8,7 @@ from flask import(
 )
 
 Articles = Articles()
+browser = Browser()
 
 def test_app_index_status_ok(client):
     assert client.get(url_for('index')).status_code == 200
@@ -40,3 +42,10 @@ def test_app_about_page_content(client):
     response = client.get('/articles')
     assert b'ARTICLES' in response.data
     assert b'Welcome to CHATTER articles.' in response.data
+
+# Sinle article view route
+def test_single_article_view_status(browser):
+    browser.visit('http://localhost:5000/articles')
+    link = browser.find_by_tag('li').last
+    link.click()
+    assert browser.is_text_present('3')
