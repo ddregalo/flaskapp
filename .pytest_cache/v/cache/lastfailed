@@ -1,1 +1,4 @@
-{}
+{
+  "tests/test_app.py::test_app_index_page_navbar": true,
+  "tests/test_app.py::test_app_index_page_title": true
+}

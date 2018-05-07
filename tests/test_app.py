@@ -11,7 +11,7 @@ Articles = Articles()
 browser = Browser()
 
 def test_app_index_status_ok(client):
-    assert client.get(url_for('index')).status_code == 200
+    assert client.get(url_for('index')).status_code == 302
 
 # Index route tests
 def test_app_index_page_navbar(client):
