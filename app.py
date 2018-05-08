@@ -14,16 +14,14 @@ from flask import(
 )
 
 Articles = Articles()
+app = Flask(__name__)
+
+app.config['MONGO_DBNAME'] = 'flaskapp'
+app.config['MONGO_URI'] = 'mongodb://ddregalo:flaskapp@ds217560.mlab.com:17560/flaskapp'
+
+mongo = PyMongo(app)
 
 def create_app():
-
-    app = Flask(__name__)
-
-    app.config['MONGODB_SETTINGS'] = {
-        'db': 'flaskapp',
-        'host': 'mongodb://<dbuser>:<dbpassword>@ds217560.mlab.com:17560/flaskapp'
-    }
-    mongo = PyMongo(app)
 
     @app.route('/')
     def index():
@@ -43,8 +41,8 @@ def create_app():
             existing_user = users.find_one({'name': request.form['username']})
             if existing_user is None:
                 # Encrypt user password with bcrypt
-                hashpass = bcrypt.hashpw(request.form['password'], bcrypt.gensalt())
-                users.insert({
+                hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
+                users.insert_one({
                     'name': request.form['password'],
                     'password': hashpass
                 })
@@ -52,9 +50,6 @@ def create_app():
                 return redirect('/')
             return 'That username already exists.'
         return render_template('register.html')
-
-
-        return
 
     @app.route('/about')
     def about():
